@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.erniang.mybatisplus.mapper.UserMapper">
+    <!--定义接口方法对应的 SQL 语句-->
+    <select id="selectMapById" resultType="java.util.Map">
+        select id, name, age, email from user where id = ${id}
+    </select>
+
+    <!-- selectPageVo-->
+    <select id="selectPageVo" resultType="User">
+        select uid, name, age, email from t_user where age > #{age} order By age ASC
+    </select>
+
+
+
+
+</mapper>
